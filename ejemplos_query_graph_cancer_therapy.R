@@ -179,7 +179,6 @@ WHERE {
 ORDER BY ?diseaseLabel ?drugLabel ?proteinLabel
 "
 results5 <- SPARQL(endpoint, query5)$results
-# Quitar los <|> de los URIs en la salida, ahora tambien para enfermedades
 results5$disease <- gsub("[<>]", "", results5$disease)
 results5$drug <- gsub("[<>]", "", results5$drug)
 results5$gene <- gsub("[<>]", "", results5$gene)
@@ -187,3 +186,4 @@ results5$protein <- gsub("[<>]", "", results5$protein)
 print(results5)
 
 # Fin del script
+
