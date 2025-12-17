@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:ns0="http://cancer_therapy.esd.es/">
+
+  <owl:Class rdf:about="http://cancer_therapy.esd.es/Gene">
+    <rdfs:label>Gene</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/biolink/vocab/Gene"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://cancer_therapy.esd.es/Protein">
+    <rdfs:label>Protein</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/biolink/vocab/Protein"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://cancer_therapy.esd.es/Drug">
+    <rdfs:label>Drug</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/biolink/vocab/Drug"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://cancer_therapy.esd.es/Disease">
+    <rdfs:label>Disease</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/biolink/vocab/Disease"/>
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="http://cancer_therapy.esd.es/encodes">
+    <rdfs:label>encodes</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/biolink/vocab/has_gene_product"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://cancer_therapy.esd.es/binds">
+    <rdfs:label>binds</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/biolink/vocab/binds"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://cancer_therapy.esd.es/treats">
+    <rdfs:label>treats</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/biolink/vocab/treats"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://cancer_therapy.esd.es/associatedWith">
+    <rdfs:label>associated with</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/biolink/vocab/gene_associated_with_condition"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://cancer_therapy.esd.es/inhibits">
+    <rdfs:label>inhibits</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/biolink/vocab/negatively_regulates"/>
+  </owl:ObjectProperty>
+
+  <rdf:Description rdf:about="http://identifiers.org/ensembl/ENSG00000141510">
+    <rdf:type rdf:resource="http://cancer_therapy.esd.es/Gene"/>
+    <rdfs:label>TP53</rdfs:label>
+    <ns0:associatedWith rdf:resource="http://purl.obolibrary.org/obo/MONDO_0004989"/>
+    <ns0:encodes>
+      <ns0:Protein rdf:about="http://purl.uniprot.org/uniprot/P04637">
+        <rdfs:label>p53</rdfs:label>
+      </ns0:Protein>
+    </ns0:encodes>
+
+  </rdf:Description>
+
+  <ns0:Gene rdf:about="http://identifiers.org/ensembl/ENSG00000141736">
+    <rdfs:label>ERBB2</rdfs:label>
+    <ns0:associatedWith rdf:resource="http://purl.obolibrary.org/obo/MONDO_0004989"/>
+    <ns0:encodes rdf:resource="http://purl.uniprot.org/uniprot/P04626"/>
+  </ns0:Gene>
+
+  <ns0:Gene rdf:about="http://identifiers.org/ensembl/ENSG00000012048">
+    <rdfs:label>BRCA1</rdfs:label>
+    <ns0:associatedWith rdf:resource="http://purl.obolibrary.org/obo/MONDO_0004989"/>
+    <ns0:encodes>
+      <ns0:Protein rdf:about="http://purl.uniprot.org/uniprot/P38398">
+        <rdfs:label>BRCA1</rdfs:label>
+      </ns0:Protein>
+    </ns0:encodes>
+
+  </ns0:Gene>
+
+  <ns0:Gene rdf:about="http://identifiers.org/ensembl/ENSG00000156738">
+    <rdfs:label>MS4A1</rdfs:label>
+    <ns0:associatedWith rdf:resource="http://purl.obolibrary.org/obo/MONDO_0018908"/>
+    <ns0:encodes rdf:resource="http://purl.uniprot.org/uniprot/P11836"/>
+  </ns0:Gene>
+
+  <ns0:Gene rdf:about="http://identifiers.org/ensembl/ENSG00000097007">
+    <rdfs:label>ABL1</rdfs:label>
+    <ns0:associatedWith rdf:resource="http://purl.obolibrary.org/obo/MONDO_0011996"/>
+    <ns0:encodes rdf:resource="http://purl.uniprot.org/uniprot/P00519"/>
+  </ns0:Gene>
+
+  <ns0:Gene rdf:about="http://identifiers.org/ensembl/ENSG00000146648">
+    <rdfs:label>EGFR</rdfs:label>
+    <ns0:associatedWith rdf:resource="http://purl.obolibrary.org/obo/MONDO_0005233"/>
+    <ns0:encodes rdf:resource="http://purl.uniprot.org/uniprot/P00533"/>
+  </ns0:Gene>
+
+  <ns0:Gene rdf:about="http://identifiers.org/ensembl/ENSG00000171862">
+    <rdfs:label>PARP1</rdfs:label>
+    <ns0:associatedWith rdf:resource="http://purl.obolibrary.org/obo/MONDO_0004989"/>
+    <ns0:encodes rdf:resource="http://purl.uniprot.org/uniprot/P09874"/>
+  </ns0:Gene>
+
+  <ns0:Gene rdf:about="http://identifiers.org/ensembl/ENSG00000128050">
+    <rdfs:label>PARP2</rdfs:label>
+    <ns0:associatedWith rdf:resource="http://purl.obolibrary.org/obo/MONDO_0004989"/>
+    <ns0:encodes rdf:resource="http://purl.uniprot.org/uniprot/Q9UGN5"/>
+  </ns0:Gene>
+
+  <ns0:Protein rdf:about="http://purl.uniprot.org/uniprot/P04626">
+    <rdfs:label>HER2</rdfs:label>
+  </ns0:Protein>
+
+  <ns0:Protein rdf:about="http://purl.uniprot.org/uniprot/P11836">
+    <rdfs:label>CD20</rdfs:label>
+  </ns0:Protein>
+
+  <ns0:Protein rdf:about="http://purl.uniprot.org/uniprot/P00519">
+    <rdfs:label>ABL1</rdfs:label>
+  </ns0:Protein>
+
+  <ns0:Protein rdf:about="http://purl.uniprot.org/uniprot/P00533">
+    <rdfs:label>EGFR</rdfs:label>
+  </ns0:Protein>
+
+  <ns0:Protein rdf:about="http://purl.uniprot.org/uniprot/P09874">
+    <rdfs:label>PARP1</rdfs:label>
+  </ns0:Protein>
+
+  <ns0:Protein rdf:about="http://purl.uniprot.org/uniprot/Q9UGN5">
+    <rdfs:label>PARP2</rdfs:label>
+  </ns0:Protein>
+
+  <ns0:Drug rdf:about="http://identifiers.org/drugbank/DB00072">
+    <rdfs:label>Trastuzumab</rdfs:label>
+    <ns0:treats rdf:resource="http://purl.obolibrary.org/obo/MONDO_0004989"/>
+    <ns0:binds rdf:resource="http://purl.uniprot.org/uniprot/P04626"/>
+  </ns0:Drug>
+
+  <ns0:Drug rdf:about="http://identifiers.org/drugbank/DB00073">
+    <rdfs:label>Rituximab</rdfs:label>
+    <ns0:treats rdf:resource="http://purl.obolibrary.org/obo/MONDO_0018908"/>
+    <ns0:binds rdf:resource="http://purl.uniprot.org/uniprot/P11836"/>
+  </ns0:Drug>
+
+  <ns0:Drug rdf:about="http://identifiers.org/drugbank/DB00619">
+    <rdfs:label>Imatinib</rdfs:label>
+    <ns0:treats rdf:resource="http://purl.obolibrary.org/obo/MONDO_0011996"/>
+    <ns0:binds rdf:resource="http://purl.uniprot.org/uniprot/P00519"/>
+  </ns0:Drug>
+
+  <ns0:Drug rdf:about="http://identifiers.org/drugbank/DB00530">
+    <rdfs:label>Erlotinib</rdfs:label>
+    <ns0:treats rdf:resource="http://purl.obolibrary.org/obo/MONDO_0005233"/>
+    <ns0:binds rdf:resource="http://purl.uniprot.org/uniprot/P00533"/>
+  </ns0:Drug>
+
+  <ns0:Drug rdf:about="http://identifiers.org/drugbank/DB08912">
+    <rdfs:label>Olaparib</rdfs:label>
+    <ns0:treats rdf:resource="http://purl.obolibrary.org/obo/MONDO_0004989"/>
+    <ns0:inhibits rdf:resource="http://purl.uniprot.org/uniprot/P09874"/>
+    <ns0:inhibits rdf:resource="http://purl.uniprot.org/uniprot/Q9UGN5"/>
+  </ns0:Drug>
+
+  <ns0:Disease rdf:about="http://purl.obolibrary.org/obo/MONDO_0004989">
+    <rdfs:label>Breast cancer</rdfs:label>
+  </ns0:Disease>
+
+  <ns0:Disease rdf:about="http://purl.obolibrary.org/obo/MONDO_0018908">
+    <rdfs:label>Non-Hodgkin lymphoma</rdfs:label>
+  </ns0:Disease>
+
+  <ns0:Disease rdf:about="http://purl.obolibrary.org/obo/MONDO_0011996">
+    <rdfs:label>Chronic myeloid leukemia</rdfs:label>
+  </ns0:Disease>
+
+  <ns0:Disease rdf:about="http://purl.obolibrary.org/obo/MONDO_0005233">
+    <rdfs:label>Non-small cell lung carcinoma</rdfs:label>
+  </ns0:Disease>
+
+</rdf:RDF>

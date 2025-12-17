@@ -1,0 +1,170 @@
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix biolink:  <https://w3id.org/biolink/vocab/> .
+@prefix ensembl:  <http://identifiers.org/ensembl/> .
+@prefix uniprot:  <http://purl.uniprot.org/uniprot/> .
+@prefix drugbank: <http://identifiers.org/drugbank/> .
+@prefix mondo:    <http://purl.obolibrary.org/obo/MONDO_> .
+@prefix ct:       <http://cancer_therapy.esd.es/> .
+
+# ----------------------------------
+# CLASES
+# ----------------------------------
+
+ct:Gene rdf:type owl:Class ;
+    rdfs:label "Gene" ;
+    rdfs:subClassOf biolink:Gene .
+
+ct:Protein rdf:type owl:Class ;
+    rdfs:label "Protein" ;
+    rdfs:subClassOf biolink:Protein .
+
+ct:Drug rdf:type owl:Class ;
+    rdfs:label "Drug" ;
+    rdfs:subClassOf biolink:Drug .
+
+ct:Disease rdf:type owl:Class ;
+    rdfs:label "Disease" ;
+    rdfs:subClassOf biolink:Disease .
+
+# ----------------------------------
+# PROPIEDADES
+# ----------------------------------
+
+ct:encodes rdf:type owl:ObjectProperty ;
+    rdfs:label "encodes" ;
+    rdfs:subPropertyOf biolink:has_gene_product .
+
+ct:binds rdf:type owl:ObjectProperty ;
+    rdfs:label "binds" ;
+    rdfs:subPropertyOf biolink:binds .
+
+ct:treats rdf:type owl:ObjectProperty ;
+    rdfs:label "treats" ;
+    rdfs:subPropertyOf biolink:treats .
+
+ct:associatedWith rdf:type owl:ObjectProperty ;
+    rdfs:label "associated with" ;
+    rdfs:subPropertyOf biolink:gene_associated_with_condition .
+
+ct:inhibits rdf:type owl:ObjectProperty ;
+    rdfs:label "inhibits" ;
+    rdfs:subPropertyOf biolink:negatively_regulates .
+
+# ----------------------------------
+# GENES
+# ----------------------------------
+
+ensembl:ENSG00000141510 rdf:type ct:Gene ;
+    rdfs:label "TP53" ;
+    ct:associatedWith mondo:0004989 ;
+    ct:encodes uniprot:P04637 .
+
+ensembl:ENSG00000141736 rdf:type ct:Gene ;
+    rdfs:label "ERBB2" ;
+    ct:associatedWith mondo:0004989 ;
+    ct:encodes uniprot:P04626 .
+
+ensembl:ENSG00000012048 rdf:type ct:Gene ;
+    rdfs:label "BRCA1" ;
+    ct:associatedWith mondo:0004989 ;
+    ct:encodes uniprot:P38398 .
+
+ensembl:ENSG00000156738 rdf:type ct:Gene ;
+    rdfs:label "MS4A1" ;
+    ct:associatedWith mondo:0018908 ;
+    ct:encodes uniprot:P11836 .
+
+ensembl:ENSG00000097007 rdf:type ct:Gene ;
+    rdfs:label "ABL1" ;
+    ct:associatedWith mondo:0011996 ;
+    ct:encodes uniprot:P00519 .
+
+ensembl:ENSG00000146648 rdf:type ct:Gene ;
+    rdfs:label "EGFR" ;
+    ct:associatedWith mondo:0005233 ;
+    ct:encodes uniprot:P00533 .
+
+ensembl:ENSG00000171862 rdf:type ct:Gene ;
+    rdfs:label "PARP1" ;
+    ct:associatedWith mondo:0004989 ;
+    ct:encodes uniprot:P09874 .
+
+ensembl:ENSG00000128050 rdf:type ct:Gene ;
+    rdfs:label "PARP2" ;
+    ct:associatedWith mondo:0004989 ;
+    ct:encodes uniprot:Q9UGN5 .
+
+# ----------------------------------
+# PROTEINAS
+# ----------------------------------
+
+uniprot:P04637 rdf:type ct:Protein ;
+    rdfs:label "p53" .
+
+uniprot:P04626 rdf:type ct:Protein ;
+    rdfs:label "HER2" .
+
+uniprot:P38398 rdf:type ct:Protein ;
+    rdfs:label "BRCA1" .
+
+uniprot:P11836 rdf:type ct:Protein ;
+    rdfs:label "CD20" .
+
+uniprot:P00519 rdf:type ct:Protein ;
+    rdfs:label "ABL1" .
+
+uniprot:P00533 rdf:type ct:Protein ;
+    rdfs:label "EGFR" .
+
+uniprot:P09874 rdf:type ct:Protein ;
+    rdfs:label "PARP1" .
+
+uniprot:Q9UGN5 rdf:type ct:Protein ;
+    rdfs:label "PARP2" .
+
+# ----------------------------------
+# TRATAMIENTOS
+# ----------------------------------
+
+drugbank:DB00072 rdf:type ct:Drug ;
+    rdfs:label "Trastuzumab" ;
+    ct:treats mondo:0004989 ;
+    ct:binds uniprot:P04626 .
+
+drugbank:DB00073 rdf:type ct:Drug ;
+    rdfs:label "Rituximab" ;
+    ct:treats mondo:0018908 ;
+    ct:binds uniprot:P11836 .
+
+drugbank:DB00619 rdf:type ct:Drug ;
+    rdfs:label "Imatinib" ;
+    ct:treats mondo:0011996 ;
+    ct:binds uniprot:P00519 .
+
+drugbank:DB00530 rdf:type ct:Drug ;
+    rdfs:label "Erlotinib" ;
+    ct:treats mondo:0005233 ;
+    ct:binds uniprot:P00533 .
+
+drugbank:DB09074 rdf:type ct:Drug ;
+    rdfs:label "Olaparib" ;
+    ct:treats mondo:0004989 ;
+    ct:inhibits uniprot:P09874 , uniprot:Q9UGN5 .
+
+# ----------------------------------
+# ENFERMEDADES
+# ----------------------------------
+
+mondo:0004989 rdf:type ct:Disease ;
+    rdfs:label "Breast cancer" .
+
+mondo:0018908 rdf:type ct:Disease ;
+    rdfs:label "Non-Hodgkin lymphoma" .
+
+mondo:0011996 rdf:type ct:Disease ;
+    rdfs:label "Chronic myeloid leukemia" .
+
+mondo:0005233 rdf:type ct:Disease ;
+    rdfs:label "Non-small cell lung carcinoma" .
